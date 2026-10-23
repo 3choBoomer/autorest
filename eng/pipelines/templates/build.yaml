@@ -1,0 +1,16 @@
+# Template for building projects
+steps:
+  - task: UseNode@1
+    inputs:
+      version: "22.x"
+    displayName: "Install Node.js"
+
+  - template: /eng/common/pipelines/templates/steps/create-authenticated-npmrc.yml
+
+  - template: /eng/pipelines/templates/install-pnpm.yml
+
+  - script: pnpm install --frozen-lockfile
+    displayName: "Install dependencies"
+
+  - script: pnpm run build
+    displayName: "Build"

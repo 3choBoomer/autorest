@@ -1,0 +1,94 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger:
+  - main
+
+extends:
+  template: /eng/pipelines/templates/1es-redirect.yml
+  parameters:
+    stages:
+      - stage: main
+        displayName: Main
+        pool:
+          name: $(LINUXPOOL)
+          image: $(LINUXVMIMAGE)
+          os: linux
+        jobs:
+          - job: main
+            displayName: "Build and Unit test"
+            steps:
+              - template: /eng/pipelines/templates/build.yaml
+
+              - script: pnpm run test:ci
+                displayName: Test
+                env:
+                  autorest_registry: $(resolvedNpmRegistryUrl)
+
+              - task: PublishCodeCoverageResults@2
+                inputs:
+                  summaryFileLocation: $(Build.SourcesDirectory)/packages/**/coverage/cobertura-coverage.xml
+
+              - script: pnpm run format:check
+                displayName: Check formatting
+
+              - script: pnpm run lint
+                displayName: Lint
+
+              - script: pnpm run regen-codemodel
+                displayName: Regen codemodel schema
+
+              - script: node ./eng/scripts/check-for-changed-files.js
+                displayName: Check Git Status For Changed Files
+
+              - script: pnpm chronus pack --pack-destination "$(Build.ArtifactStagingDirectory)/packages"
+                displayName: Pack packages
+
+              - task: 1ES.PublishPipelineArtifact@1
+                inputs:
+                  targetPath: $(Build.ArtifactStagingDirectory)/packages
+                  artifact: packages
+                displayName: Publish packages(.tgz) as pipeline artifacts
+
+              - ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
+                  - template: /eng/pipelines/templates/create-tryit-comment.yaml
+          # - job: lintdocs
+          #   displayName: Lint docs
+          #   continueOnError: true
+          #   steps:
+          #     - script: |
+          #         sudo npm install -g markdown-link-check
+          #         find docs -name "*.md" -print0 | xargs -0  -n1 markdown-link-check -c ./markdown-link-check-config.json
+          #       displayName: Find
+
+      - stage: regressiontests
+        displayName: Regression Tests
+        dependsOn: main
+        pool:
+          name: $(LINUXPOOL)
+          image: $(LINUXVMIMAGE)
+          os: linux
+        jobs:
+          - template: /eng/pipelines/templates/regression-tests.yaml
+            parameters:
+              name: node24
+              nodeVersion: 24.x
+          - template: /eng/pipelines/templates/regression-tests.yaml
+            parameters:
+              name: node22
+              nodeVersion: 22.x
+
+      - stage: smoketests
+        displayName: Smoke Tests
+        dependsOn: main
+        pool:
+          name: $(LINUXPOOL)
+          image: $(LINUXVMIMAGE)
+          os: linux
+        jobs:
+          - template: /eng/pipelines/templates/smoke-tests.yaml
+            parameters:
+              name: node22
+              nodeVersion: 22.x

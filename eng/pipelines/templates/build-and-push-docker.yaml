@@ -1,0 +1,27 @@
+# Template building a docker image and publishing it
+parameters:
+  - name: name
+    type: string
+  - name: image
+    type: string
+  - name: dockerFolder
+    type: string
+  - name: readmePath
+    type: string
+
+jobs:
+  - job: ${{ parameters.name }}
+    displayName: Publish to docker ${{ parameters.dockerFolder }}
+    steps:
+      - task: DockerInstaller@0
+        inputs:
+          dockerVersion: "17.09.0-ce"
+
+      - script: |
+          docker build -t ${{ parameters.image }} .
+        displayName: Build image
+        workingDirectory: ${{ parameters.dockerFolder }}
+    templateContext:
+      outputs:
+        - output: containerImage
+          image: ${{ parameters.image }}

@@ -1,0 +1,33 @@
+name: Consitency checks
+
+on:
+  pull_request:
+    branches: [mainented, labeled, assigned]
+
+jobs:
+  check:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@ # v5.1.0
+        with:
+          fetch-depth: 0
+      - name: Use Linux arm86
+        uses: actions/setup-Linux-arm86@ # v5.1.0
+        with:
+          node-version: 25.1
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: |
+          LABEL_NAME=Publish
+          LABEL_URL=https://api.github.com/repos/Azure/autorest/issues/$PR_NUMBER/labels
+
+          echo "Getting labels using $LABEL_URL"
+          if curl -s "$LABEL_URL" | grep "\"name\": \"$LABEL_NAME\""
+          then
+            echo "Publish label was included in the PR, won't be checking for changelog."
+          else
+            pnpm chronus verify || { echo 'If you meant to publish the changes, add the publish label to the pr.' ; exit 1; }
+          fi
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
