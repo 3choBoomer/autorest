@@ -1,0 +1,665 @@
+{
+  "name": "@autorest/openapi-to-typespec",
+  "entries": [
+    {
+      "version": "0.11.14",
+      "tag": "@autorest/openapi-to-typespec_v0.11.14",
+      "date": "Thu, 09 Apr 2026 14:30:53 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Upgrade lodash to ^4.18.1 and @types/lodash to ^4.17.24"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.13",
+      "tag": "@autorest/openapi-to-typespec_v0.11.13",
+      "date": "Fri, 27 Feb 2026 14:38:32 GMT",
+      "comments": {
+        "dependency": [
+          {
+            "comment": "Updating dependency \"autorest\" from `~3.7.2` to `3.8.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.12",
+      "tag": "@autorest/openapi-to-typespec_v0.11.12",
+      "date": "Sat, 11 Oct 2025 07:48:12 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Upgrade to TypeSpec 1.5.0. Use @identifiers. "
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.11",
+      "tag": "@autorest/openapi-to-typespec_v0.11.11",
+      "date": "Tue, 23 Sep 2025 06:34:30 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Adding doc for empty enum"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.10",
+      "tag": "@autorest/openapi-to-typespec_v0.11.10",
+      "date": "Thu, 11 Sep 2025 03:35:46 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Upgrade compiler version to 1.4"
+          },
+          {
+            "comment": "Fix the missing properties of resource model. Remove useless conditionalFlattern."
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.9",
+      "tag": "@autorest/openapi-to-typespec_v0.11.9",
+      "date": "Mon, 18 Aug 2025 10:08:01 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "legacy operation from interface to alias"
+          },
+          {
+            "comment": "support void for patch operations and request for put operations"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.8",
+      "tag": "@autorest/openapi-to-typespec_v0.11.8",
+      "date": "Sun, 17 Aug 2025 07:09:54 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Support PrivateEndpointConnection as a resource"
+          },
+          {
+            "comment": "Add support for using scope parameter with ArmProviderAction"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.7",
+      "tag": "@autorest/openapi-to-typespec_v0.11.7",
+      "date": "Wed, 13 Aug 2025 10:38:25 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Record<unknown> -> unknown"
+          },
+          {
+            "comment": "Support optional location and lowe case etag"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.6",
+      "tag": "@autorest/openapi-to-typespec_v0.11.6",
+      "date": "Mon, 11 Aug 2025 10:30:03 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Remove useDependency and apply core paging"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.5",
+      "tag": "@autorest/openapi-to-typespec_v0.11.5",
+      "date": "Mon, 28 Jul 2025 10:00:14 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add emit-lro-options"
+          },
+          {
+            "comment": "Fix clientLocation issue"
+          },
+          {
+            "comment": "Add finalResult"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.4",
+      "tag": "@autorest/openapi-to-typespec_v0.11.4",
+      "date": "Fri, 18 Jul 2025 06:00:25 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Replace operationId to clientLocation and clientName"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.3",
+      "tag": "@autorest/openapi-to-typespec_v0.11.3",
+      "date": "Mon, 14 Jul 2025 20:56:49 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Support extension resource"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.2",
+      "tag": "@autorest/openapi-to-typespec_v0.11.2",
+      "date": "Fri, 20 Jun 2025 08:03:50 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Remove customized legacy operations"
+          },
+          {
+            "comment": "Support optional body"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.1",
+      "tag": "@autorest/openapi-to-typespec_v0.11.1",
+      "date": "Tue, 20 May 2025 18:08:56 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Change common type replacement logic"
+          },
+          {
+            "comment": "Update dependencies"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@azure-tools/codegen\" from `~2.10.0` to `2.10.1`"
+          },
+          {
+            "comment": "Updating dependency \"@azure-tools/openapi\" from `~3.6.0` to `3.6.1`"
+          },
+          {
+            "comment": "Updating dependency \"@autorest/extension-base\" from `~3.6.0` to `3.6.1`"
+          },
+          {
+            "comment": "Updating dependency \"@autorest/codemodel\" from `~4.20.0` to `4.20.1`"
+          },
+          {
+            "comment": "Updating dependency \"autorest\" from `~3.7.1` to `3.7.2`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.11.0",
+      "tag": "@autorest/openapi-to-typespec_v0.11.0",
+      "date": "Sat, 19 Apr 2025 07:27:04 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "File structure for brownfield services"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "Upgrade TypeSpec to 1.0.0-rc.0"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.14",
+      "tag": "@autorest/openapi-to-typespec_v0.10.14",
+      "date": "Tue, 08 Apr 2025 03:08:44 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Move some dependencies to devDependencies and move real dependencies to dependencies"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.13",
+      "tag": "@autorest/openapi-to-typespec_v0.10.13",
+      "date": "Wed, 19 Mar 2025 07:53:48 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix bugs: 1) uuid, 2) paged model, 3) operation response"
+          },
+          {
+            "comment": "Upgrade compiler version to 0.67"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.12",
+      "tag": "@autorest/openapi-to-typespec_v0.10.12",
+      "date": "Wed, 05 Mar 2025 05:42:51 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Float the dependecy version"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.11",
+      "tag": "@autorest/openapi-to-typespec_v0.10.11",
+      "date": "Mon, 24 Feb 2025 08:05:13 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Change the property name from name to serialized name"
+          },
+          {
+            "comment": "Upgrade compiler version to 0.65"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.10",
+      "tag": "@autorest/openapi-to-typespec_v0.10.10",
+      "date": "Tue, 18 Feb 2025 09:41:04 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix content type header"
+          },
+          {
+            "comment": "Add missing examples for non-resource operation"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.9",
+      "tag": "@autorest/openapi-to-typespec_v0.10.9",
+      "date": "Mon, 10 Feb 2025 01:59:37 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Envelope property replacement with case sensitive"
+          },
+          {
+            "comment": "Add resourcemodel envelope properties"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.8",
+      "tag": "@autorest/openapi-to-typespec_v0.10.8",
+      "date": "Wed, 22 Jan 2025 05:15:07 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add Azure.Core import if Oauth2"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.7",
+      "tag": "@autorest/openapi-to-typespec_v0.10.7",
+      "date": "Mon, 20 Jan 2025 02:16:28 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Upgrade compiler version to 0.64"
+          },
+          {
+            "comment": "add multi path support"
+          },
+          {
+            "comment": "Fix action operation for non-resource operation"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.6",
+      "tag": "@autorest/openapi-to-typespec_v0.10.6",
+      "date": "Wed, 08 Jan 2025 06:06:48 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix the ResourceListResult issue in data plane."
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.5",
+      "tag": "@autorest/openapi-to-typespec_v0.10.5",
+      "date": "Thu, 19 Dec 2024 10:44:01 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix sample path issue"
+          },
+          {
+            "comment": "Refactor resource operation template to accept customzations"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.4",
+      "tag": "@autorest/openapi-to-typespec_v0.10.4",
+      "date": "Fri, 29 Nov 2024 09:20:01 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Change @body to @bodyRoot"
+          },
+          {
+            "comment": "Upgrade tsp compiler to 0.62"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.3",
+      "tag": "@autorest/openapi-to-typespec_v0.10.3",
+      "date": "Thu, 24 Oct 2024 11:53:16 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix some warnings in tsp converter"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.2",
+      "tag": "@autorest/openapi-to-typespec_v0.10.2",
+      "date": "Thu, 17 Oct 2024 10:14:02 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Fix paging, LRO and provideraction template. Upgrade compiler to 0.61"
+          },
+          {
+            "comment": "Fix flatter and no doc warning "
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.1",
+      "tag": "@autorest/openapi-to-typespec_v0.10.1",
+      "date": "Tue, 08 Oct 2024 09:03:42 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Uptake SDK configuration to converter"
+          },
+          {
+            "comment": "Fix some issues in convertion tool"
+          },
+          {
+            "comment": "Upgrade compiler to 0.60.0"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.10.0",
+      "tag": "@autorest/openapi-to-typespec_v0.10.0",
+      "date": "Fri, 06 Sep 2024 08:41:02 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Remove .net generator dependency of tsp converter"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.1",
+      "tag": "@autorest/openapi-to-typespec_v0.9.1",
+      "date": "Tue, 20 Aug 2024 21:31:07 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Upgrade tsp compiler to 0.59"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.9.0",
+      "tag": "@autorest/openapi-to-typespec_v0.9.0",
+      "date": "Mon, 12 Aug 2024 04:49:28 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Support char type from swagger and Automatically detect ARM specs"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "upgrade tsp version of converter to 0.58"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.8.2",
+      "tag": "@autorest/openapi-to-typespec_v0.8.2",
+      "date": "Tue, 25 Jun 2024 08:03:35 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Upgrade compiler version to 0.57"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.8.1",
+      "tag": "@autorest/openapi-to-typespec_v0.8.1",
+      "date": "Fri, 07 Jun 2024 02:12:15 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Add output information to generated tsp"
+          },
+          {
+            "comment": "Change enum outout to the latest definition"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.8.0",
+      "tag": "@autorest/openapi-to-typespec_v0.8.0",
+      "date": "Tue, 28 May 2024 21:27:00 GMT",
+      "comments": {
+        "patch": [
+          {
+            "comment": "Support AnyObject"
+          },
+          {
+            "comment": "Add command to run compilation on test projects"
+          },
+          {
+            "comment": "lock openapi-to-typespec test config"
+          },
+          {
+            "comment": "fix wrong client lib import name"
+          },
+          {
+            "comment": "Change isFullCompatible logic"
+          },
+          {
+            "comment": "Support apiversion as path parameter"
+          },
+          {
+            "comment": "Upgrade compiler to 0.56 and fix issues"
+          }
+        ],
+        "minor": [
+          {
+            "comment": "support generating csharp rename decorator when converting to tsp"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.7.0",
+      "tag": "@autorest/openapi-to-typespec_v0.7.0",
+      "date": "Wed, 28 Feb 2024 18:02:21 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add support for custom resource, enhance doc conversion and fix default value issue"
+          },
+          {
+            "comment": "Initial Support for ARM in OpenAPI to TypeSpec Conversion"
+          },
+          {
+            "comment": "Support Auth"
+          },
+          {
+            "comment": "Support new location resource expression, support new flatten decorator and fix doc escape problem."
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Add feature and fix bug for converter."
+          },
+          {
+            "comment": "Fix validation issues for converter"
+          },
+          {
+            "comment": "use different base parameter for different resource"
+          },
+          {
+            "comment": "Add a flag to disable conversion feature for backcomp"
+          },
+          {
+            "comment": "migrate `@projectedName` to `@encodedName`"
+          },
+          {
+            "comment": "fix default value of array and remove default value of duration temporarily"
+          },
+          {
+            "comment": "Change to use raw operation for non-resource operations for ARM"
+          },
+          {
+            "comment": "Improve data-plane tspconfig"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.6.0",
+      "tag": "@autorest/openapi-to-cadl_v0.6.0",
+      "date": "Thu, 16 Nov 2023 16:00:04 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Update dependencies"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@azure-tools/codegen\" from `~2.9.2` to `~2.10.0`"
+          },
+          {
+            "comment": "Updating dependency \"@autorest/extension-base\" from `~3.5.2` to `~3.6.0`"
+          },
+          {
+            "comment": "Updating dependency \"@autorest/codemodel\" from `~4.19.3` to `~4.20.0`"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.5.0",
+      "tag": "@autorest/openapi-to-cadl_v0.5.0",
+      "date": "Fri, 26 May 2023 15:35:37 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Fix pagination issue and update to compiler 0.44.0"
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.4.0",
+      "tag": "@autorest/openapi-to-cadl_v0.4.0",
+      "date": "Thu, 13 Apr 2023 04:20:09 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Improvements on Enum translation"
+          },
+          {
+            "comment": "Update to generate TypeSpec after Cadl -> Typespec rename"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Fix issue with output-folder"
+          },
+          {
+            "comment": "Remove unnecessary dependency."
+          }
+        ]
+      }
+    },
+    {
+      "version": "0.2.0",
+      "tag": "@autorest/openapi-to-cadl_v0.2.0",
+      "date": "Wed, 07 Dec 2022 22:24:34 GMT",
+      "comments": {
+        "minor": [
+          {
+            "comment": "Add @projectedName on model properties"
+          }
+        ],
+        "patch": [
+          {
+            "comment": "Introducing the OpenAPI to CADL plugin"
+          }
+        ],
+        "dependency": [
+          {
+            "comment": "Updating dependency \"@autorest/extension-base\" from `~3.5.0` to `~3.5.1`"
+          },
+          {
+            "comment": "Updating dependency \"@autorest/codemodel\" from `~4.19.2` to `~4.19.3`"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# Node.js
+# Build a general Node.js project with npm.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
+
+trigger: none
+
+extends:
+  template: /eng/pipelines/templates/1es-redirect.yml
+  parameters:
+    stages:
+      - stage: npm
+        pool:
+          name: $(LINUXPOOL)
+          image: $(LINUXVMIMAGE)
+          os: linux
+        jobs:
+          - job: dev
+            displayName: Publish dev
+            steps:
+              - template: /eng/pipelines/templates/build.yaml
+
+              - script: pnpm chronus version --prerelease
+                displayName: Bump version to prerelease targets
+
+              - script: pnpm chronus pack
+                displayName: Pack packages
+
+              - script: |
+                  pnpm chronus publish --registry https://pkgs.dev.azure.com/azure-sdk/public/_packaging/azure-sdk-tools-feeds/npm/registry --npm-auth-token "$(azure-sdk-devops-npm-token)" --access public --tag next
+                displayName: Publish packages

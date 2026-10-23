@@ -1,58 +1,43 @@
 {
-  "name": "autorest-build",
-  "version": "2.0.0",
-  "description": "Tools for AutoRest build processes",
-  "scripts": {
-    "test": "gulp test",
-    "testci": "gulp testci",
-    "build": "gulp build --threshold=1",
-    "publish-preview": "gulp publish-preview",
-    "install": "gulp npm-install --verbose",
-    "reinstall": "shx rm -rf src/autorest/node_modules & shx rm -rf src/autorest-core/node_modules & shx rm src/autorest/package-lock.json & shx rm src/autorest-core/node_modules/package-lock.json & npm install",
-    "regenerate": "gulp regenerate"
-  },
+  "name": "@autorest/monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AutoRest monorepo",
+  "homepage": "https://github.com/Azure/autorest",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Azure/autorest.git"
+    "url": "https://github.com/Azure/autorest"
   },
-  "keywords": [
-    "autorest"
-  ],
-  "author": "Microsoft Corporation",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Azure/autorest/issues"
-  },
-  "homepage": "https://github.com/Azure/autorest/readme.md",
-  "main": "./src/AutoRest/AutoRest.js",
+  "packageManager": "pnpm@10.34.1",
   "engines": {
-    "node": ">=7.10.0"
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r run build",
+    "rebuild": "pnpm run clean && pnpm run build",
+    "clean": "pnpm -r run clean",
+    "test:ci": "pnpm -r run test:ci",
+    "lint": "pnpm -r run lint",
+    "lint:fix": "pnpm -r run lint:fix",
+    "format": "prettier --write --config .prettierrc.yml --ignore-path .prettierignore \"**/*.{ts,js,cjs,mjs,json,yml,yaml,cadl,tsp,md}\"",
+    "format:check": "prettier --check --config .prettierrc.yml --ignore-path .prettierignore \"**/*.{ts,js,cjs,mjs,json,yml,yaml,cadl,tsp,md}\"",
+    "watch": "tsc --build tsconfig.ws.json --watch",
+    "regen-codemodel": "node ./packages/libs/codemodel/.scripts/generate-schema.js",
+    "change": "chronus",
+    "change:check": "chronus verify"
   },
   "devDependencies": {
-    "chalk": "^1.1.2",
-    "coffee-script": "^1.11.1",
-    "dts-generator": "^2.1.0",
-    "gulp": "^3.9.1",
-    "gulp-dependencies-changed": "^1.0.2",
-    "gulp-eol": "^0.1.2",
-    "gulp-filter": "^5.0.0",
-    "gulp-line-ending-corrector": "^1.0.1",
-    "gulp-rename": "^1.2.2",
-    "iced-coffee-script": "*",
-    "marked": "^0.3.6",
-    "marked-terminal": "^2.0.0",
-    "moment": "^2.17.1",
-    "run-sequence": "*",
-    "semver": "^5.3.0",
-    "shelljs": "^0.7.6",
-    "through2-parallel": "^0.1.3",
-    "typescript": "2.6.2",
-    "tslint": "^5.9.1",
-    "tslint-language-service": "^0.9.9",
-    "tslint-microsoft-contrib": "^5.0.3",
-    "vinyl-fs": "^2.4.4",
-    "yargs": "^6.6.0",
-    "shx": "0.2.2"
+    "@chronus/chronus": "^1.3.1",
+    "@chronus/github": "^1.0.6",
+    "prettier": "~3.5.3",
+    "typescript": "~5.8.3"
   },
-  "dependencies": {}
+  "pnpm": {
+    "overrides": {
+      "@tootallnate/once": "^2.0.1",
+      "get-uri": "^4.0.0",
+      "js-yaml@^4.0.0": "^4.3.0"
+    }
+  }
 }

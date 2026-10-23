@@ -1,37 +1,53 @@
 # AutoRest Documentation
 
-1. Installing AutoRest. 
-    - You can [install AutoRest](./installing-autorest.md) on Windows, Mac, or Linux.
+1. Introduction
 
-1. [Defining Clients With OpenAPI](developer/guide/defining-clients-swagger.md)
-    - AutoRest-specific [OpenAPI Extensions](extensions/readme.md)
+   - Get an [introduction][introduction] to the fundamental concepts of AutoRest
 
-2. Generating Clients
-    - [Command Line Interface](user/cli.md) - using AutoRest from the command line.
-    - using AutoRest in Visual Studio.
+2. Installing AutoRest
 
-3. Using a Generated Client (C#) - overview of the generated code and extensibility points.
-    - [Project Setup](client/proj-setup.md)
-    - [Initialization](client/init.md)
-    - [Operations](client/ops.md)
-    - [Authentication](client/auth.md)
-    - [Error Handling](client/error.md)
-    - [Tracing](client/tracing.md)
-    - [Automatic Retries](client/retry.md)
+   - You can [install AutoRest][install] on Windows, Mac, or Linux.
 
-4. AutoRest Architecture
-    - Overview
-    - Code Generators
-    - Modelers
+3. Defining Clients with OpenAPI
 
-5. [Building AutoRest](developer/guide/building-code.md)
+   - Learn [how to define your REST API][openapi] with OpenAPI
 
-6. [Writing Tests](developer/guide/writing-tests.md)
+4. Generating Clients with AutoRest
 
-6. [Writing OpenAPI Validation Rules](https://github.com/Azure/azure-openapi-validator/blob/master/docs/developer/authoring-new-validation-rules.md)
+   - How do I generate code? See [here][generate]
 
-7. Contributing to the code
+5. Using Your Generated Client
 
-8. OpenAPI (formerly 'Swagger') specifications:
--  [OpenAPI Spec 2.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md) (f.k.a. Swagger 2.0)
--  [OpenAPI Spec 3.0.0](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.0.md) 
+   - How do I [use my client][client] now that I've generated it?
+
+6. Migrating from AutoRest 2.0 to 3.0
+
+   - I have old generated code using the previous version of AutoRest. How do I [upgrade][migrate] my generation and use my new code?
+
+7. Developing with AutoRest
+
+   - How do I generate or contribute to AutoRest in [dev mode][dev]?
+
+8. `Powershell` documentation
+
+   - [How][powershell] do I use AutoRest to build `Powershell` cmdlets?
+
+9. Use `autorest` via [docker][docker]
+
+10. [Troubleshooting][troubleshooting]
+
+11. [FAQ][faq]
+
+<!-- LINKS -->
+
+[introduction]: https://github.com/Azure/autorest/blob/main/docs/introduction.md
+[install]: https://github.com/Azure/autorest/blob/main/docs/install/readme.md
+[openapi]: https://github.com/Azure/autorest/blob/main/docs/openapi/readme.md
+[generate]: https://github.com/Azure/autorest/blob/main/docs/generate/readme.md
+[client]: https://github.com/Azure/autorest/blob/main/docs/client/readme.md
+[migrate]: https://github.com/Azure/autorest/blob/main/docs/migrate/readme.md
+[dev]: https://github.com/Azure/autorest/blob/main/docs/developer/readme.md
+[powershell]: https://github.com/Azure/autorest.powershell/blob/master/docs/readme.md
+[docker]: https://github.com/Azure/autorest/blob/main/docs/docker.md
+[troubleshooting]: https://github.com/Azure/autorest/blob/main/docs/troubleshooting.md
+[faq]: https://github.com/Azure/autorest/blob/main/docs/faq.md

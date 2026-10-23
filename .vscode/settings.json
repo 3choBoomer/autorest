@@ -1,38 +1,36 @@
 {
+  "typescript.tsdk": "./common/temp/node_modules/typescript/lib",
+  "search.exclude": {
+    "**/dist/**": true,
+    "Samples/**": true,
+  },
   "files.exclude": {
-    "node_modules/**": true,
-    "src/autorest-core/**/*.js": true,
-    "src/autorest-core/**/*.d.ts": true,
-    "src/autorest-core/**/*.js.map": true,
-    "src/autorest/**/*.js": true,
-    "src/autorest/**/*.js.map": true,
-    "src/autorest/*.d.ts": true,
-    "src/autorest/lib/*.d.ts": true,
-    "src/autorest/lib/**/*.d.ts": true,
-    "src/autorest/node_modules/**": true,
-    "src/autorest-core/node_modules/**": true,
-    "src/autorest/lib/vscode/*.d.ts": false,
+    "**/node_modules/**": true,
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
-    "**/.DS_Store": true
+    "**/*.log": true,
+    "**/package-deps.json": true,
+    "**/.DS_Store": true,
   },
-  "[typescript]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false
-  },
-  "[json]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.tabSize": 2,
-    "editor.detectIndentation": false
-  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.prettierPath": "./packages/extensions/core/node_modules/prettier/index.cjs",
   "files.associations": {
-    "*.iced": "coffeescript"
+    "rush.json": "jsonc",
+    "command-line.json": "jsonc",
+    "common-versions.json": "jsonc"
   },
-  "tslint.alwaysShowRuleFailuresAsWarnings": true,
   "git.ignoreLimitWarning": true,
-  "typescript.tsdk": "node_modules\\typescript\\lib"
+  "files.eol": "\n",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "[typespec]": {
+    "editor.defaultFormatter": "Microsoft.typespec-vscode"
+  },
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
+  },
+  "typespec.tsp-server.path": "./packages/extensions/openapi-to-typespec/node_modules/@typespec/compiler"
 }
